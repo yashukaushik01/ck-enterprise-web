@@ -1,0 +1,19 @@
+[
+    {
+        "id": "1",
+        "name": "UBL Chuck",
+        "price": "$1",
+        "image": "http://localhost:5173/src/assets/img-ubl_chuck.png",
+        "heading1": "UBL Chuck – Precision Locking Power Chuck by C.K Enterprise",
+        "text1": "At C.K Enterprise, we bring you the UBL Chuck, an innovative, locking-type power chuck engineered for applications that require exceptional gripping performance, rigidity, and durability. This chuck is ideal for securing cast or forged materials with draft angles and overhanging workpieces—tasks that conventional chucks struggle to manage. The UBL Chuck also improves the roundness of thin-walled parts and handles complex, difficult-to-grip shapes with ease and precision.",
+        "heading2": "Why Choose the UBL Chuck from C.K Enterprise?",
+        "text2": "Versatile Gripping for Any Application",
+        "heading3": "Available Sizes and Jaw Configurations:",
+        "text3": "The UBL Chuck is available in a variety of sizes, catering to diverse workpiece dimensions.",
+        "heading4": "",
+        "text4": "",
+        "heading5": "",
+        "text5": ""
+    },
+    { "id": "2", "name": "Bolt", "price": "$2", "image": "https://unsplash.com/photos/gray-adjustable-wrench-and-gray-pipe-wrench-4mAcustUNPs" }
+]
