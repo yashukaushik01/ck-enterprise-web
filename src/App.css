@@ -1,4 +1,5 @@
 .home-bg {
-    background-image: url('http://localhost:5173/src/assets/img-bg_home.png');
-    height: 100vh;
+    background-image: url('https://yashukaushik01.github.io/ck-enterprise-web/img-bg_home.png'); /* Adjust the path to your image */
+    background-size: cover;
+    background-position: center;
 }

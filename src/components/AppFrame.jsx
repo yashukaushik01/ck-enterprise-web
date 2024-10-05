@@ -10,11 +10,9 @@ import ProductDetails from './components/ProductDetails';
 import Footer from './components/Footer';
 
 function App() {
-
   return (
     <Router>
         <Navbar />
-        <div className="pt-14"></div>
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
@@ -22,7 +20,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
         </Routes>
-        <Footer/>
+        <Footer />
     </Router>
   );
 }
