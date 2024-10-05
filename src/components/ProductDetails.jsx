@@ -1,18 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import productJson from 'https://yashukaushik01.github.io/ck-enterprise-web/product-details.json';
 
 const ProductDetails = () => {
     const { productId } = useParams();
-    const productList = productJson;
-    const product = productList.find(x => x.id === productId);
+    const [product, setProduct] = useState(null); // State to hold the product
+    const [loading, setLoading] = useState(true); // State for loading status
+    const [error, setError] = useState(null); // State for error handling
 
-    if (!product) {
+    useEffect(() => {
+        fetch('https://yashukaushik01.github.io/ck-enterprise-web/product-details.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const foundProduct = data.find(x => x.id === productId);
+                if (foundProduct) {
+                    setProduct(foundProduct); // Update state with the found product
+                } else {
+                    setError('Product Not Found'); // Handle case where product is not found
+                }
+                setLoading(false); // Set loading to false
+            })
+            .catch(err => {
+                setError(err.message); // Handle fetch errors
+                setLoading(false); // Set loading to false
+            });
+    }, [productId]); // Dependency on productId to refetch if it changes
+
+    if (loading) {
+        return <div className="text-center text-xl">Loading...</div>; // Display loading message
+    }
+
+    if (error) {
         return (
             <div className="flex flex-col items-center justify-center p-8 bg-white rounded-lg shadow-lg max-w-2xl mx-auto">
-                <h1 className="text-2xl font-bold text-gray-800">Product Not Found</h1>
+                <h1 className="text-2xl font-bold text-gray-800">{error}</h1>
             </div>
-        );
+        ); // Display error message
     }
 
     const details = [

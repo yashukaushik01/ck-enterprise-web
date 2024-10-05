@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import productJson from 'https://yashukaushik01.github.io/ck-enterprise-web/product-details.json';
 
 const Products = () => {
-    const productList = productJson;
+    const [productList, setProductList] = useState([]); // Use state to hold product list
+    const [loading, setLoading] = useState(true); // Use state for loading status
+    const [error, setError] = useState(null); // Use state for error handling
+
+    useEffect(() => {
+        fetch('https://yashukaushik01.github.io/ck-enterprise-web/product-details.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                setProductList(data); // Update state with fetched data
+                setLoading(false); // Set loading to false
+            })
+            .catch(err => {
+                setError(err.message); // Handle errors
+                setLoading(false); // Set loading to false
+            });
+    }, []); // Empty dependency array to run once on mount
+
+    if (loading) {
+        return <div>Loading...</div>; // Display loading message
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>; // Display error message
+    }
 
     return (
         <div className="bg-blue-100 min-h-screen flex items-center justify-center p-6">
