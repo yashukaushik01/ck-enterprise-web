@@ -1,5 +1,6 @@
 // src/components/Footer.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -14,7 +15,7 @@ const Footer = () => {
           <ul style={styles.list}>
             {/* <li><a href="/privacy" style={styles.link}>Privacy Policy</a></li>
             <li><a href="/terms" style={styles.link}>Terms of Service</a></li> */}
-            <li><a href="/contact" style={styles.link}>Contact Us</a></li>
+            <li><Link style={styles.link} to="/contact">Contact Us</Link></li>
           </ul>
         </div>
         {/* <div style={styles.column}>
