@@ -1,7 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import CataloguePdf from '../../public/';
 
 const Navbar = () => {
+
+    const downloadCatalog = () => {
+        const pdfUrl = "../../public/catalogue.pdf";
+        const link = document.createElement("a");
+        link.href = pdfUrl;
+        link.download = "catalogue.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
     return (
         <nav className="bg-gray-800 p-4 w-full z-10 fixed">
             <div className="container mx-auto flex justify-between">
@@ -9,7 +21,7 @@ const Navbar = () => {
                 <div className="space-x-4 font-bold">
                     <Link className="text-gray-300 hover:text-white" to="/">Home</Link>
                     <Link className="text-gray-300 hover:text-white" to="/products">Our Products</Link>
-                    <Link className="text-gray-300 hover:text-white" to="/about">Catalog</Link>
+                    <Link onClick={downloadCatalog} className="text-gray-300 hover:text-white">Catalog</Link>
                     <Link className="text-gray-300 hover:text-white" to="/about">About Us</Link>
                     <Link className="text-gray-300 hover:text-white" to="/contact">Contact</Link>
                 </div>

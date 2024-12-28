@@ -1,7 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 // Import your hero image
 
 const Home = () => {
+
+    const navigate = useNavigate();
+
     return (
         <div 
             className="flex items-center justify-center min-h-screen text-center relative home-bg" 
@@ -18,12 +22,12 @@ const Home = () => {
                     Explore our product range and take your projects to the next level. Join us in 
                     revolutionizing your machining experience with precision tools designed for excellence.
                 </p>
-                <a 
-                    href="/products" 
-                    className="inline-block bg-blue-500 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-600 transition duration-300"
+                <div 
+                    onClick={() => navigate("/products")} 
+                    className="inline-block bg-blue-500 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-600 transition duration-300 cursor-pointer"
                 >
                     Shop Now
-                </a>
+                </div>
             </div>
         </div>
     );

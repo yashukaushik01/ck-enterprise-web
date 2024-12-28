@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 function App() {
 
   return (
-    <Router basename="/ck-enterprise-web">
+    <Router basename="/">
         <Navbar />
         <div className="pt-14"></div>
         <Routes>
