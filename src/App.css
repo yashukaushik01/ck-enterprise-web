@@ -1,5 +1,5 @@
 .home-bg {
-    background-image: url('https://yashukaushik01.github.io/ck-enterprise-web/img-bg_home.png'); /* Adjust the path to your image */
+    background-image: url('../img-bg_home.png'); /* Adjust the path to your image */
     background-size: cover;
     background-position: center;
 }

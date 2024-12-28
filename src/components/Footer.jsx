@@ -12,19 +12,19 @@ const Footer = () => {
         <div style={styles.column}>
           <h3 style={styles.title}>Links</h3>
           <ul style={styles.list}>
-            <li><a href="/privacy" style={styles.link}>Privacy Policy</a></li>
-            <li><a href="/terms" style={styles.link}>Terms of Service</a></li>
+            {/* <li><a href="/privacy" style={styles.link}>Privacy Policy</a></li>
+            <li><a href="/terms" style={styles.link}>Terms of Service</a></li> */}
             <li><a href="/contact" style={styles.link}>Contact Us</a></li>
           </ul>
         </div>
-        <div style={styles.column}>
+        {/* <div style={styles.column}>
           <h3 style={styles.title}>Follow Us</h3>
           <ul style={styles.socialLinks}>
             <li><a href="https://facebook.com" style={styles.link}>Facebook</a></li>
             <li><a href="https://twitter.com" style={styles.link}>Twitter</a></li>
             <li><a href="https://instagram.com" style={styles.link}>Instagram</a></li>
           </ul>
-        </div>
+        </div> */}
       </div>
       <div style={styles.bottom}>
         <p style={styles.text}>&copy; {new Date().getFullYear()} CK Enterprises. All rights reserved.</p>

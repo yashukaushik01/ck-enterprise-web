@@ -7,7 +7,7 @@ const Products = () => {
     const [error, setError] = useState(null); // Use state for error handling
 
     useEffect(() => {
-        fetch('https://yashukaushik01.github.io/ck-enterprise-web/product-details.json')
+        fetch('../../product-details.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

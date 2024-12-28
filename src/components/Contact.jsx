@@ -7,6 +7,7 @@ const Contact = () => {
         {
             title: "Phone",
             content: "+91 9310156392",
+            content2: "+91 9310156396",
             icon: <FaPhone className="text-blue-500 text-3xl" />,
         },
         {
@@ -39,6 +40,7 @@ const Contact = () => {
                             <div>
                                 <h2 className="text-xl font-semibold text-gray-800">{detail.title}</h2>
                                 <p className="text-gray-600">{detail.content}</p>
+                                {detail.content2 && <p className="text-gray-600">{detail.content2}</p>} 
                             </div>
                         </motion.div>
                     ))}
